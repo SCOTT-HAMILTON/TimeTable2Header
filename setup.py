@@ -5,13 +5,13 @@ setup(
     version='0.1',
     packages=find_packages(),
     include_package_data=True,
-    py_modules = [ 'timetable2header', 'convert_timetable2header' ],
+    py_modules = [ 'timetable2header', 'cli' ],
 
     install_requires=['pandas', 'numpy', 'Click'],
 
     entry_points='''
         [console_scripts]
-        timetable2header=TimeTable2Header.timetable2header:cli
+        timetable2header=TimeTable2Header.cli:cli
     ''',
 
     # metadata to display on PyPI

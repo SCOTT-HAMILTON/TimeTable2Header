@@ -11,7 +11,7 @@ def extract_excel_data(input_excel_timetable):
     data = pd.read_excel(input_excel_timetable, engine="openpyxl")
     name = data.columns[0]
     data.fillna('', inplace=True)
-    numberOfWeeksFilled = int(len(data.values[0])/2)
+    numberOfWeeksFilled = int(len(list(filter(lambda x: x != '', data.values[0]))))
     weeks = []
     for week in range(numberOfWeeksFilled):
         compressColumnCondition = np.full(numberOfWeeksFilled*2, False)
